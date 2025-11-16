@@ -1344,3 +1344,139 @@ https://templatemo.com/tm-596-electric-xtra
         padding: 15px 25px 20px 25px;
     }
 }
+/* New styles for Future Event section */
+.future-events-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.future-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.event-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 178, 255, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 178, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 178, 255, 0.3);
+}
+
+.event-image-container {
+  position: relative;
+  width: 100%;
+  height: 220px; /* Fixed height for consistent cards */
+  overflow: hidden;
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image {
+  transform: scale(1.05);
+}
+
+.event-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.event-card:hover .event-overlay {
+  opacity: 1;
+}
+
+.event-icon {
+  font-size: 3rem;
+  color: #FF5E00;
+  text-shadow: 0 0 15px rgba(255, 94, 0, 0.8);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.event-card:hover .event-icon {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.event-details {
+  padding: 30px;
+  flex-grow: 1; /* Allow details to take up remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-details h3 {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #FF5E00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.event-details p {
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.event-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: auto; /* Push buttons to the bottom */
+}
+
+/* Adjust cta-secondary for event cards */
+.event-actions .cta-button.cta-secondary {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-actions .cta-button.cta-secondary:hover {
+  background: #00B2FF;
+  color: #fff;
+  border-color: #00B2FF;
+  box-shadow: 0 0 20px rgba(0, 178, 255, 0.5);
+}
+
+/* Responsive for Future Events */
+@media (max-width: 768px) {
+  .future-events-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
